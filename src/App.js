@@ -1,24 +1,45 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+const data =
+[
+  {
+    Location : "Kitusuru",
+    description : "Near a police station",
+    Rooms :"3" ,
+    Price : "16,000 Kshs",
+  },
+  {
+    Location : "Langata",
+    description : "Near a supermarket",
+    Rooms :"5" ,
+    Price : "100,000 Kshs",
+  },
+  {
+    Location : "Mombasa",
+    description : "Near a garage",
+    Rooms :"4" ,
+    Price : "60,000 Kshs",
+  },
+
+
+]
+
+const propertyList = data.map(myList =>{
+  const items = `${myList.Location} - ${myList.description} - ${myList.Rooms} - ${myList.Price}`
+  return <li>{items}</li>
+}
+);
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+    <ul>
+      {propertyList}
+    </ul>
+   </div>
+   
+
   );
 }
 
